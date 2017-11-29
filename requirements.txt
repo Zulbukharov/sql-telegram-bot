@@ -1,4 +1,4 @@
 redis
-telebot
-
+pyTelegramBotAPI==3.4.2
+	
 
