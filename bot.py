@@ -2,19 +2,19 @@
 import redis
 import os
 import telebot
-# import some_api_lib
-# import ...
 
-# Example of your code beginning
-#           Config vars
 token = os.environ['TELEGRAM_TOKEN']
 some_api_token = os.environ['SOME_API_TOKEN']
-#             ...
 
-# If you use redis, install this add-on https://elements.heroku.com/addons/heroku-redis
-r = redis.from_url(os.environ.get("REDIS_URL"))
+from SQLighter import SQLighter
+bot = telebot.TeleBot(token)
 
-#       Your bot code below
-# bot = telebot.TeleBot(token)
-# some_api = some_api_lib.connect(some_api_token)
-#              ...
+@bot.message_handler(content_types=["text"])
+def new_message(message):
+    db = SQLighter(config.database_name)
+    mes = db.save_row(message.chat.id, message.text)
+    print(mes)
+    bot.send_message(message.chat.id, mes)
+
+if __name__ == '__main__':
+    bot.polling(none_stop=True)
