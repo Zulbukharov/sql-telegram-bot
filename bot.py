@@ -2,11 +2,10 @@
 import redis
 import os
 import telebot
+from SQLighter import SQLighter
 
 token = os.environ['TELEGRAM_TOKEN']
-some_api_token = os.environ['SOME_API_TOKEN']
 
-from SQLighter import SQLighter
 bot = telebot.TeleBot(token)
 
 @bot.message_handler(content_types=["text"])
