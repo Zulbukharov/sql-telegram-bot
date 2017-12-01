@@ -1,5 +1,5 @@
-SQL TELEGRAM BOT BY MARSHALL
-	2017
+SQL TELEGRAM BOT BY MARSHALL <br/>
+	<center>2017</center> <br/>
 ░░░░█▐▄▒▒▒▌▌▒▒▌░▌▒▐▐▐▒▒▐▒▒▌▒▀▄▀▄░
 ░░░█▐▒▒▀▀▌░▀▀▀░░▀▀▀░░▀▀▄▌▌▐▒▒▒▌▐░
 ░░▐▒▒▀▀▄▐░▀▀▄▄░░░░░░░░░░░▐▒▌▒▒▐░▌
