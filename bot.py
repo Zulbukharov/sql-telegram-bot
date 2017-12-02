@@ -4,8 +4,11 @@ import redis
 import os
 import telebot
 from SQLighter import SQLighter
+from telegram.ext import Updater
 
 token = os.environ['TELEGRAM_TOKEN']
+PORT = int(os.environ.get('PORT', '5000'))
+updater = Updater(token)
 
 bot = telebot.TeleBot(token)
 
@@ -16,5 +19,11 @@ def new_message(message):
     print(mes)
     bot.send_message(message.chat.id, mes)
 
-if __name__ == '__main__':
-    bot.polling(none_stop=True)
+updater.start_webhook(listen="0.0.0.0",
+                      port=PORT,
+                      url_path=token)
+updater.bot.set_webhook("https://MYAPP.herokuapp.com/" + TOKEN)
+updater.idle()
+
+
+
