@@ -19,11 +19,9 @@ def new_message(message):
     print(mes)
     bot.send_message(message.chat.id, mes)
 
+
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
-                      url_path=token)
-updater.bot.set_webhook("https://MYAPP.herokuapp.com/" + TOKEN)
+                      url_path=TOKEN)
+updater.bot.set_webhook("https://sql1telegram1bot.herokuapp.com/" + TOKEN)
 updater.idle()
-
-
-
