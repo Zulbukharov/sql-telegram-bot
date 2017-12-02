@@ -11,7 +11,9 @@ import os
 TOKEN = os.environ['TELEGRAM_TOKEN']
 PORT = int(os.environ.get('PORT', '5000'))
 
-updater = Updater(TOKEN)
+bot = telebot.TeleBot(token)
+
+updater = bot.Updater(TOKEN)
 # add handlers
 
 @bot.message_handler(content_types=["text"])
@@ -28,7 +30,3 @@ updater.start_webhook(listen="0.0.0.0",
 updater.bot.set_webhook("https://sql1telegram1bot.herokuapp.com/" + TOKEN)
 updater.idle()
 
-bot = telebot.TeleBot(token)
-
-if __name__ == '__main__':
-    bot.polling(none_stop=True)
