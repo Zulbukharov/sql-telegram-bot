@@ -1,4 +1,4 @@
 redis
 pyTelegramBotAPI==3.4.2
 	
-
+python-telegram-bot==8.1.1
